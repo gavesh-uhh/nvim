@@ -1,11 +1,11 @@
--- @Calvera-Dark
+-- @Nightfox >> Carbonfox
 
 return {
-	"yashguptaz/calvera-dark.nvim",
+	"EdenEast/nightfox.nvim",
 	version = false,
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd([[colorscheme calvera]])
+		vim.cmd([[colorscheme carbonfox]])
 	end,
 }
