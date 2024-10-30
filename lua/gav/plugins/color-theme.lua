@@ -1,11 +1,12 @@
--- @Nightfox >> Carbonfox
-
 return {
-	"EdenEast/nightfox.nvim",
+	"tiagovla/tokyodark.nvim",
 	version = false,
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd([[colorscheme carbonfox]])
+		require("tokyodark").setup({
+			transparent_background = true,
+		})
+		vim.cmd([[colorscheme tokyodark]])
 	end,
 }

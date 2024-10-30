@@ -22,11 +22,11 @@ return {
 
 		harpoon.setup({
 			menu = {
-				width = 60,
+				width = vim.api.nvim_win_get_width(0) - 20,
 			},
 		})
 
-		keymap.set("n", "<leader>h", harpoon_mark.add_file, opts)
+		keymap.set("n", "<leader>q", harpoon_mark.add_file, opts)
 		keymap.set("n", "<C-e>", harpoon_ui.toggle_quick_menu, opts)
 	end,
 }

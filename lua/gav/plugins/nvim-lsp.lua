@@ -9,7 +9,7 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		local cmp_lsconfig = require("cmp_nvim_lsp")
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -63,12 +63,24 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		vim.g.markdown_fenced_languages = {
+			"ts=typescript",
+		}
 		mason_lspconfig.setup_handlers({
 			function(server_name)
 				require("lspconfig")[server_name].setup({
 					capabilities = capabilities,
 				})
 			end,
+		})
+
+		lspconfig.denols.setup({
+			root_dir = lspconfig.util.root_pattern("deno.json", "import_map.json"),
+		})
+
+		lspconfig.tsserver.setup({
+			root_dir = lspconfig.util.root_pattern("package.json"),
+			single_file_support = false,
 		})
 	end,
 }
