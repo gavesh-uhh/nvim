@@ -1,12 +1,9 @@
 return {
-	"tiagovla/tokyodark.nvim",
+	"gantoreno/nvim-gabriel",
 	version = false,
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("tokyodark").setup({
-			transparent_background = true,
-		})
-		vim.cmd([[colorscheme tokyodark]])
+		vim.cmd([[colorscheme gabriel]])
 	end,
 }

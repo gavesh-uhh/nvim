@@ -18,3 +18,5 @@ vim.opt.backup = false -- Disable backup files
 vim.opt.swapfile = false -- Disable swap files
 vim.opt.splitright = true -- Split Verticals to Right
 vim.opt.splitbelow = true -- Split Horizontals to Below
+vim.opt.shellslash = false
+vim.opt.termguicolors = true

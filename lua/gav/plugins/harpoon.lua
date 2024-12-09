@@ -17,7 +17,6 @@ return {
 			return
 		end
 
-		local opts = { noremap = true, silent = true }
 		local keymap = vim.keymap
 
 		harpoon.setup({
@@ -26,7 +25,17 @@ return {
 			},
 		})
 
-		keymap.set("n", "<leader>q", harpoon_mark.add_file, opts)
-		keymap.set("n", "<C-e>", harpoon_ui.toggle_quick_menu, opts)
+		keymap.set(
+			"n",
+			"<leader>q",
+			harpoon_mark.add_file,
+			{ noremap = true, silent = true, desc = "[Harpoon] Add to Harpoon" }
+		)
+		keymap.set(
+			"n",
+			"<C-e>",
+			harpoon_ui.toggle_quick_menu,
+			{ noremap = true, silent = true, desc = "[Harpoon] Open Harpoon GUI" }
+		)
 	end,
 }
