@@ -3,7 +3,6 @@ vim.g.localmapleader = " "
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
-
 require("gav.remap")
 require("gav.set")
 require("gav.lazy")
